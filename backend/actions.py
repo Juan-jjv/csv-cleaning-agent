@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def remove_duplicates(dataframe: pd.DataFrame) -> pd.DataFrame:
     """
     Return a new DataFrame with duplicate rows removed.
