@@ -1,7 +1,10 @@
 import pandas as pd
 
-from backend.actions import remove_duplicates, remove_missing_rows
-
+from backend.actions import (
+    remove_duplicates,
+    remove_missing_rows,
+    fill_missing_with_median,
+)
 def test_remove_duplicates():
     dataframe = pd.DataFrame({
         "name": ["John", "Bob", "John"],
@@ -25,3 +28,13 @@ def test_remove_missing_rows():
     assert len(result) == 2
     assert result.loc[0, "name"] == "John"
     assert result.loc[1, "name"] == "Alice"
+
+def test_fill_missing_with_median():
+    dataframe = pd.DataFrame({
+        "age": [20, None, 40]
+    })
+
+    result = fill_missing_with_median(dataframe, "age")
+
+    assert result.loc[1, "age"] == 30
+    assert result["age"].isna().sum() == 0

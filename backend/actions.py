@@ -1,13 +1,24 @@
 import pandas as pd
 
 def remove_duplicates(dataframe: pd.DataFrame) -> pd.DataFrame:
-    cleaned_dataframe = dataframe.drop_duplicates()
-    cleaned_dataframe = cleaned_dataframe.reset_index(drop=True)
-
-    return cleaned_dataframe
+    return dataframe.drop_duplicates().reset_index(drop=True)
 
 def remove_missing_rows(dataframe: pd.DataFrame) -> pd.DataFrame:
-    cleaned_dataframe = dataframe.dropna()
-    cleaned_dataframe = cleaned_dataframe.reset_index(drop=True)
+    return dataframe.dropna().reset_index(drop=True)
 
-    return cleaned_dataframe
+def fill_missing_with_median(
+    dataframe: pd.DataFrame,
+    column: str
+) -> pd.DataFrame:
+
+    if column not in dataframe.columns:
+        raise ValueError(f"Column '{column}' does not exist.")
+
+    if not pd.api.types.is_numeric_dtype(dataframe[column]):
+        raise ValueError(f"Column '{column}' must be numeric.")
+
+    median = dataframe[column].median()
+
+    dataframe[column] = dataframe[column].fillna(median)
+
+    return dataframe
