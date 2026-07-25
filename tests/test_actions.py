@@ -6,6 +6,7 @@ from backend.actions import (
     fill_missing_with_median,
     fill_missing_with_mean,
     drop_column,
+    rename_column,
 )
 
 def test_remove_duplicates():
@@ -63,3 +64,15 @@ def test_drop_column():
 
     assert "salary" not in result.columns
     assert list(result.columns) == ["name", "age"]
+
+def test_rename_column():
+    dataframe = pd.DataFrame({
+        "name": ["John", "Bob"],
+        "age": [20, 25]
+    })
+
+    result = rename_column(dataframe, "age", "years_old")
+
+    assert "years_old" in result.columns
+    assert "age" not in result.columns
+    assert list(result.columns) == ["name", "years_old"]
