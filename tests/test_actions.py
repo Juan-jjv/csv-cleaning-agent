@@ -5,6 +5,7 @@ from backend.actions import (
     remove_missing_rows,
     fill_missing_with_median,
     fill_missing_with_mean,
+    drop_column,
 )
 
 def test_remove_duplicates():
@@ -50,3 +51,15 @@ def test_fill_missing_with_mean():
 
     assert result.loc[2, "age"] == 20
     assert result["age"].isna().sum() == 0
+
+def test_drop_column():
+    dataframe = pd.DataFrame({
+        "name": ["John", "Bob"],
+        "age": [20, 25],
+        "salary": [50000, 60000]
+    })
+
+    result = drop_column(dataframe, "salary")
+
+    assert "salary" not in result.columns
+    assert list(result.columns) == ["name", "age"]

@@ -39,3 +39,13 @@ def fill_missing_with_mean(
     dataframe[column] = dataframe[column].fillna(mean)
 
     return dataframe
+
+def drop_column(
+    dataframe: pd.DataFrame,
+    column: str
+) -> pd.DataFrame:
+
+    if column not in dataframe.columns:
+        raise ValueError(f"Column '{column}' does not exist.")
+
+    return dataframe.drop(columns=[column])
