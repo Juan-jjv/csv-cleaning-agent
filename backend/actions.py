@@ -22,3 +22,20 @@ def fill_missing_with_median(
     dataframe[column] = dataframe[column].fillna(median)
 
     return dataframe
+
+def fill_missing_with_mean(
+    dataframe: pd.DataFrame,
+    column: str
+) -> pd.DataFrame:
+
+    if column not in dataframe.columns:
+        raise ValueError(f"Column '{column}' does not exist.")
+
+    if not pd.api.types.is_numeric_dtype(dataframe[column]):
+        raise ValueError(f"Column '{column}' must be numeric.")
+
+    mean = dataframe[column].mean()
+
+    dataframe[column] = dataframe[column].fillna(mean)
+
+    return dataframe

@@ -4,7 +4,9 @@ from backend.actions import (
     remove_duplicates,
     remove_missing_rows,
     fill_missing_with_median,
+    fill_missing_with_mean,
 )
+
 def test_remove_duplicates():
     dataframe = pd.DataFrame({
         "name": ["John", "Bob", "John"],
@@ -37,4 +39,14 @@ def test_fill_missing_with_median():
     result = fill_missing_with_median(dataframe, "age")
 
     assert result.loc[1, "age"] == 30
+    assert result["age"].isna().sum() == 0
+
+def test_fill_missing_with_mean():
+    dataframe = pd.DataFrame({
+        "age": [10, 20, None, 30]
+    })
+
+    result = fill_missing_with_mean(dataframe, "age")
+
+    assert result.loc[2, "age"] == 20
     assert result["age"].isna().sum() == 0
