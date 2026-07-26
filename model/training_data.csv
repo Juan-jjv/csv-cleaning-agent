@@ -1,0 +1,721 @@
+instruction,action
+Can you replace missing values in COLUMN with the average in the dataset,fill_missing_with_mean
+Please use the average to fill missing values in COLUMN in this CSV,fill_missing_with_mean
+I need you to fill empty values in COLUMN using the average in this CSV,fill_missing_with_mean
+Can you change the name of COLUMN to NEW_COLUMN,rename_column
+I need you to rename the COLUMN column to NEW_COLUMN in the dataset,rename_column
+Could you get rid of incomplete records in this CSV,remove_missing_rows
+Could you delete COLUMN,drop_column
+I need you to remove incomplete rows in the dataset,remove_missing_rows
+Could you remove incomplete rows in the dataset,remove_missing_rows
+Could you replace the name COLUMN with NEW_COLUMN from this file,rename_column
+Use the mean for empty values in COLUMN from this file,fill_missing_with_mean
+Could you replace missing values in COLUMN with the median in the dataset,fill_missing_with_median
+I need you to rename the COLUMN column to NEW_COLUMN from this file,rename_column
+I need you to delete the COLUMN column in the dataset,drop_column
+Keep only unique rows,remove_duplicates
+Please get rid of duplicated records in this CSV,remove_duplicates
+Can you delete COLUMN,drop_column
+Please replace missing values in COLUMN with the average in this CSV,fill_missing_with_mean
+Could you use the median for empty values in COLUMN in this CSV,fill_missing_with_median
+Could you remove records that have empty fields from this file,remove_missing_rows
+Please rename the COLUMN column to NEW_COLUMN in the dataset,rename_column
+Please delete COLUMN in this CSV,drop_column
+I need you to fill missing values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Delete COLUMN from this file,drop_column
+Can you fill missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Could you eliminate duplicate entries in this CSV,remove_duplicates
+I need you to delete repeated entries,remove_duplicates
+Can you remove rows with missing values from this file,remove_missing_rows
+Delete duplicate records in the dataset,remove_duplicates
+Could you rename the COLUMN column to NEW_COLUMN,rename_column
+Can you rename the COLUMN column to NEW_COLUMN in the dataset,rename_column
+Can you use the mean for empty values in COLUMN,fill_missing_with_mean
+Change the name of COLUMN to NEW_COLUMN in the dataset,rename_column
+Could you delete repeated entries from this file,remove_duplicates
+Please remove rows that appear more than once from this file,remove_duplicates
+Can you drop the COLUMN column in the dataset,drop_column
+Please replace the name COLUMN with NEW_COLUMN in this CSV,rename_column
+Can you get rid of incomplete records from this file,remove_missing_rows
+Please remove repeated rows,remove_duplicates
+Could you drop the COLUMN column in this CSV,drop_column
+I need you to rename COLUMN to NEW_COLUMN in the dataset,rename_column
+Remove rows that appear more than once in this CSV,remove_duplicates
+I need you to get rid of COLUMN in this CSV,drop_column
+I need you to remove the field COLUMN from this file,drop_column
+Can you delete the COLUMN column in the dataset,drop_column
+Rename the COLUMN column to NEW_COLUMN in this CSV,rename_column
+Please eliminate duplicate entries in the dataset,remove_duplicates
+Can you replace missing values in COLUMN with the median,fill_missing_with_median
+Remove duplicate rows in the dataset,remove_duplicates
+I need you to keep only unique rows,remove_duplicates
+Please fill missing values in COLUMN with the median from this file,fill_missing_with_median
+I need you to fill empty values in COLUMN using the average in the dataset,fill_missing_with_mean
+Can you fill missing values in COLUMN with the median,fill_missing_with_median
+Please fill empty values in COLUMN using the average in this CSV,fill_missing_with_mean
+Get rid of COLUMN,drop_column
+I need you to replace missing values in COLUMN with the median,fill_missing_with_median
+Could you remove repeated rows,remove_duplicates
+Can you remove records that have empty fields in the dataset,remove_missing_rows
+Could you replace blank values in COLUMN with the mean from this file,fill_missing_with_mean
+I need you to get rid of duplicated records from this file,remove_duplicates
+I need you to drop rows with missing data,remove_missing_rows
+Could you change COLUMN to NEW_COLUMN in this CSV,rename_column
+Please remove the field COLUMN in the dataset,drop_column
+Please drop the COLUMN column from this file,drop_column
+Can you fill missing values in COLUMN with the median from this file,fill_missing_with_median
+Please use the mean for empty values in COLUMN,fill_missing_with_mean
+Could you remove duplicate rows in the dataset,remove_duplicates
+Please remove incomplete rows in the dataset,remove_missing_rows
+I need you to use the mean for empty values in COLUMN in the dataset,fill_missing_with_mean
+Please get rid of duplicated records in the dataset,remove_duplicates
+Drop rows with missing data,remove_missing_rows
+Please replace missing values in COLUMN with the median,fill_missing_with_median
+Can you get rid of COLUMN in this CSV,drop_column
+Please fill missing values in COLUMN with the mean,fill_missing_with_mean
+I need you to give COLUMN the new name NEW_COLUMN in this CSV,rename_column
+Can you rename COLUMN to NEW_COLUMN in the dataset,rename_column
+Can you use the average to fill missing values in COLUMN from this file,fill_missing_with_mean
+Please delete the COLUMN column,drop_column
+Drop rows with missing data in the dataset,remove_missing_rows
+Could you drop rows with missing data,remove_missing_rows
+Could you use the median to fill missing values in COLUMN in the dataset,fill_missing_with_median
+Can you remove rows that contain blanks in the dataset,remove_missing_rows
+Remove repeated rows in this CSV,remove_duplicates
+Can you drop rows with missing data from this file,remove_missing_rows
+Please delete records with empty values in this CSV,remove_missing_rows
+Fill missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Use the mean for empty values in COLUMN in this CSV,fill_missing_with_mean
+Can you fill empty values in COLUMN using the median from this file,fill_missing_with_median
+Can you replace missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Can you use the average to fill missing values in COLUMN in the dataset,fill_missing_with_mean
+Could you remove rows that contain blanks in this CSV,remove_missing_rows
+Can you rename COLUMN to NEW_COLUMN from this file,rename_column
+I need you to remove the field COLUMN in this CSV,drop_column
+Can you fill missing values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Could you remove the COLUMN column in the dataset,drop_column
+Please use the mean for empty values in COLUMN from this file,fill_missing_with_mean
+I need you to use the mean for empty values in COLUMN from this file,fill_missing_with_mean
+Please use the average to fill missing values in COLUMN,fill_missing_with_mean
+Please use the median to fill missing values in COLUMN,fill_missing_with_median
+I need you to fill empty values in COLUMN using the median from this file,fill_missing_with_median
+I need you to delete duplicate records in this CSV,remove_duplicates
+Rename the COLUMN column to NEW_COLUMN,rename_column
+Could you drop the COLUMN column in the dataset,drop_column
+Replace blank values in COLUMN with the median in the dataset,fill_missing_with_median
+Please fill empty values in COLUMN using the median in the dataset,fill_missing_with_median
+Could you change COLUMN to NEW_COLUMN in the dataset,rename_column
+Please replace the name COLUMN with NEW_COLUMN from this file,rename_column
+Please remove rows that contain blanks,remove_missing_rows
+Could you rename COLUMN to NEW_COLUMN,rename_column
+Please rename the COLUMN column to NEW_COLUMN from this file,rename_column
+I need you to replace the name COLUMN with NEW_COLUMN in the dataset,rename_column
+Please use the median to fill missing values in COLUMN from this file,fill_missing_with_median
+Drop the COLUMN column in the dataset,drop_column
+Can you use the mean for empty values in COLUMN in this CSV,fill_missing_with_mean
+I need you to replace the name COLUMN with NEW_COLUMN,rename_column
+Can you delete rows containing missing values in this CSV,remove_missing_rows
+Please replace blank values in COLUMN with the mean from this file,fill_missing_with_mean
+Can you give COLUMN the new name NEW_COLUMN from this file,rename_column
+Could you delete records with empty values from this file,remove_missing_rows
+I need you to delete duplicate records,remove_duplicates
+Can you replace the name COLUMN with NEW_COLUMN from this file,rename_column
+I need you to eliminate duplicate entries in the dataset,remove_duplicates
+I need you to fill empty values in COLUMN using the median in the dataset,fill_missing_with_median
+Could you get rid of COLUMN from this file,drop_column
+Remove records that have empty fields,remove_missing_rows
+Could you use the mean for empty values in COLUMN from this file,fill_missing_with_mean
+Can you remove the COLUMN column in the dataset,drop_column
+I need you to remove rows that contain blanks in the dataset,remove_missing_rows
+Can you delete repeated entries,remove_duplicates
+I need you to keep only unique rows from this file,remove_duplicates
+Please remove the COLUMN column in this CSV,drop_column
+Could you change COLUMN to NEW_COLUMN,rename_column
+Replace missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Change the name of COLUMN to NEW_COLUMN,rename_column
+Can you remove the COLUMN column in this CSV,drop_column
+Can you delete repeated entries in the dataset,remove_duplicates
+Drop the COLUMN column in this CSV,drop_column
+Replace missing values in COLUMN with the average in the dataset,fill_missing_with_mean
+Could you eliminate duplicate entries from this file,remove_duplicates
+Could you fill missing values in COLUMN with the mean from this file,fill_missing_with_mean
+Use the median to fill missing values in COLUMN in this CSV,fill_missing_with_median
+Use the median for empty values in COLUMN in this CSV,fill_missing_with_median
+Replace the name COLUMN with NEW_COLUMN,rename_column
+Replace missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you use the median for empty values in COLUMN from this file,fill_missing_with_median
+Can you delete duplicate records in the dataset,remove_duplicates
+Please use the median for empty values in COLUMN,fill_missing_with_median
+Can you delete duplicate records from this file,remove_duplicates
+Could you use the median to fill missing values in COLUMN in this CSV,fill_missing_with_median
+Could you replace blank values in COLUMN with the median from this file,fill_missing_with_median
+Could you delete duplicate records in this CSV,remove_duplicates
+I need you to remove records that have empty fields in this CSV,remove_missing_rows
+Could you get rid of COLUMN in this CSV,drop_column
+Please fill empty values in COLUMN using the median from this file,fill_missing_with_median
+Can you replace blank values in COLUMN with the median,fill_missing_with_median
+Please remove incomplete rows,remove_missing_rows
+Please remove duplicate rows in the dataset,remove_duplicates
+Please remove the field COLUMN in this CSV,drop_column
+I need you to get rid of duplicated records in the dataset,remove_duplicates
+Please remove the COLUMN column,drop_column
+Could you replace the name COLUMN with NEW_COLUMN in this CSV,rename_column
+Can you keep only unique rows in the dataset,remove_duplicates
+Could you give COLUMN the new name NEW_COLUMN,rename_column
+Could you rename COLUMN to NEW_COLUMN in the dataset,rename_column
+Can you replace blank values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Give COLUMN the new name NEW_COLUMN from this file,rename_column
+Could you replace blank values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Can you use the median for empty values in COLUMN,fill_missing_with_median
+I need you to fill missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you delete records with empty values in the dataset,remove_missing_rows
+Delete records with empty values in this CSV,remove_missing_rows
+I need you to use the median for empty values in COLUMN,fill_missing_with_median
+Can you get rid of COLUMN in the dataset,drop_column
+Please keep only unique rows from this file,remove_duplicates
+Please eliminate duplicate entries,remove_duplicates
+Could you delete the COLUMN column from this file,drop_column
+Could you change the name of COLUMN to NEW_COLUMN from this file,rename_column
+Can you delete COLUMN in the dataset,drop_column
+Can you remove the field COLUMN in this CSV,drop_column
+I need you to delete duplicate records in the dataset,remove_duplicates
+Could you delete rows containing missing values from this file,remove_missing_rows
+Delete duplicate records,remove_duplicates
+Remove repeated rows,remove_duplicates
+Remove the field COLUMN in this CSV,drop_column
+Use the median to fill missing values in COLUMN,fill_missing_with_median
+I need you to remove the field COLUMN,drop_column
+Please give COLUMN the new name NEW_COLUMN from this file,rename_column
+Please delete duplicate records,remove_duplicates
+Drop the COLUMN column,drop_column
+Replace blank values in COLUMN with the mean from this file,fill_missing_with_mean
+Can you change COLUMN to NEW_COLUMN from this file,rename_column
+Please drop rows with missing data in this CSV,remove_missing_rows
+Can you remove rows with missing values in this CSV,remove_missing_rows
+Replace the name COLUMN with NEW_COLUMN in the dataset,rename_column
+Please get rid of incomplete records,remove_missing_rows
+Remove rows that contain blanks in this CSV,remove_missing_rows
+Eliminate duplicate entries in this CSV,remove_duplicates
+Replace missing values in COLUMN with the average from this file,fill_missing_with_mean
+Can you remove rows that appear more than once,remove_duplicates
+Can you remove repeated rows,remove_duplicates
+I need you to fill empty values in COLUMN using the median in this CSV,fill_missing_with_median
+Please fill empty values in COLUMN using the median in this CSV,fill_missing_with_median
+Please drop the COLUMN column,drop_column
+Could you replace blank values in COLUMN with the median in the dataset,fill_missing_with_median
+Could you remove rows with missing values in the dataset,remove_missing_rows
+I need you to fill missing values in COLUMN with the median from this file,fill_missing_with_median
+Can you remove the field COLUMN in the dataset,drop_column
+Can you rename the COLUMN column to NEW_COLUMN in this CSV,rename_column
+Could you drop rows with missing data in the dataset,remove_missing_rows
+Please remove records that have empty fields in this CSV,remove_missing_rows
+Remove records that have empty fields in the dataset,remove_missing_rows
+Please fill empty values in COLUMN using the median,fill_missing_with_median
+I need you to remove the COLUMN column in this CSV,drop_column
+I need you to rename COLUMN to NEW_COLUMN in this CSV,rename_column
+Rename COLUMN to NEW_COLUMN in the dataset,rename_column
+Please change the name of COLUMN to NEW_COLUMN,rename_column
+Replace blank values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Can you keep only unique rows,remove_duplicates
+Can you remove the COLUMN column from this file,drop_column
+Please delete rows containing missing values in the dataset,remove_missing_rows
+I need you to delete COLUMN from this file,drop_column
+Replace the name COLUMN with NEW_COLUMN from this file,rename_column
+Get rid of duplicated records,remove_duplicates
+Get rid of incomplete records in the dataset,remove_missing_rows
+Please fill missing values in COLUMN with the mean from this file,fill_missing_with_mean
+Please use the median for empty values in COLUMN in the dataset,fill_missing_with_median
+Please fill missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Could you replace blank values in COLUMN with the mean in the dataset,fill_missing_with_mean
+I need you to remove rows with missing values in the dataset,remove_missing_rows
+I need you to remove rows that appear more than once in this CSV,remove_duplicates
+Could you delete the COLUMN column,drop_column
+I need you to fill missing values in COLUMN with the mean from this file,fill_missing_with_mean
+Can you give COLUMN the new name NEW_COLUMN,rename_column
+Can you change the name of COLUMN to NEW_COLUMN in this CSV,rename_column
+Use the mean for empty values in COLUMN,fill_missing_with_mean
+Replace missing values in COLUMN with the average in this CSV,fill_missing_with_mean
+Rename COLUMN to NEW_COLUMN from this file,rename_column
+Remove incomplete rows from this file,remove_missing_rows
+Fill empty values in COLUMN using the median in this CSV,fill_missing_with_median
+Could you remove the COLUMN column in this CSV,drop_column
+Please give COLUMN the new name NEW_COLUMN in this CSV,rename_column
+Can you use the median to fill missing values in COLUMN,fill_missing_with_median
+Could you remove duplicate rows from this file,remove_duplicates
+Delete the COLUMN column,drop_column
+Can you replace the name COLUMN with NEW_COLUMN,rename_column
+Fill missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you drop the COLUMN column,drop_column
+I need you to drop the COLUMN column in this CSV,drop_column
+Could you give COLUMN the new name NEW_COLUMN in the dataset,rename_column
+I need you to use the mean for empty values in COLUMN,fill_missing_with_mean
+Could you fill empty values in COLUMN using the median,fill_missing_with_median
+Please drop the COLUMN column in the dataset,drop_column
+Please delete COLUMN,drop_column
+Can you fill missing values in COLUMN with the mean,fill_missing_with_mean
+Delete repeated entries,remove_duplicates
+Please get rid of incomplete records in this CSV,remove_missing_rows
+Could you remove rows with missing values,remove_missing_rows
+I need you to use the median to fill missing values in COLUMN in the dataset,fill_missing_with_median
+Remove duplicate rows,remove_duplicates
+Can you give COLUMN the new name NEW_COLUMN in the dataset,rename_column
+Please get rid of COLUMN,drop_column
+Delete the COLUMN column in this CSV,drop_column
+I need you to give COLUMN the new name NEW_COLUMN,rename_column
+I need you to remove duplicate rows in the dataset,remove_duplicates
+Use the median for empty values in COLUMN from this file,fill_missing_with_median
+Remove the field COLUMN in the dataset,drop_column
+Can you use the median for empty values in COLUMN in the dataset,fill_missing_with_median
+I need you to delete COLUMN,drop_column
+Can you drop rows with missing data in this CSV,remove_missing_rows
+Could you drop the COLUMN column from this file,drop_column
+Please remove incomplete rows in this CSV,remove_missing_rows
+Please drop rows with missing data in the dataset,remove_missing_rows
+Could you get rid of COLUMN in the dataset,drop_column
+Could you remove rows with missing values in this CSV,remove_missing_rows
+Can you remove repeated rows in the dataset,remove_duplicates
+Could you get rid of incomplete records,remove_missing_rows
+Remove duplicate rows from this file,remove_duplicates
+Please change COLUMN to NEW_COLUMN,rename_column
+Can you remove rows that contain blanks in this CSV,remove_missing_rows
+Please keep only unique rows,remove_duplicates
+I need you to get rid of incomplete records in this CSV,remove_missing_rows
+Could you replace the name COLUMN with NEW_COLUMN,rename_column
+Can you eliminate duplicate entries in the dataset,remove_duplicates
+Please get rid of incomplete records from this file,remove_missing_rows
+Could you fill empty values in COLUMN using the median from this file,fill_missing_with_median
+Delete COLUMN in this CSV,drop_column
+Replace missing values in COLUMN with the median from this file,fill_missing_with_median
+Can you delete records with empty values in this CSV,remove_missing_rows
+Could you remove the field COLUMN in the dataset,drop_column
+Can you replace blank values in COLUMN with the mean,fill_missing_with_mean
+Could you use the median for empty values in COLUMN from this file,fill_missing_with_median
+Can you give COLUMN the new name NEW_COLUMN in this CSV,rename_column
+I need you to fill empty values in COLUMN using the average from this file,fill_missing_with_mean
+I need you to delete rows containing missing values from this file,remove_missing_rows
+Replace missing values in COLUMN with the average,fill_missing_with_mean
+I need you to use the median to fill missing values in COLUMN,fill_missing_with_median
+I need you to remove the field COLUMN in the dataset,drop_column
+I need you to change the name of COLUMN to NEW_COLUMN in this CSV,rename_column
+Please remove rows with missing values,remove_missing_rows
+Remove rows with missing values in the dataset,remove_missing_rows
+I need you to use the median for empty values in COLUMN in the dataset,fill_missing_with_median
+Could you keep only unique rows,remove_duplicates
+Delete repeated entries from this file,remove_duplicates
+I need you to get rid of COLUMN in the dataset,drop_column
+I need you to eliminate duplicate entries from this file,remove_duplicates
+Could you fill missing values in COLUMN with the median from this file,fill_missing_with_median
+I need you to rename the COLUMN column to NEW_COLUMN,rename_column
+I need you to use the average to fill missing values in COLUMN,fill_missing_with_mean
+Use the average to fill missing values in COLUMN in the dataset,fill_missing_with_mean
+Can you delete records with empty values,remove_missing_rows
+Please remove duplicate rows from this file,remove_duplicates
+Could you delete records with empty values in this CSV,remove_missing_rows
+Use the average to fill missing values in COLUMN in this CSV,fill_missing_with_mean
+Please change the name of COLUMN to NEW_COLUMN in this CSV,rename_column
+Could you keep only unique rows in this CSV,remove_duplicates
+Change the name of COLUMN to NEW_COLUMN in this CSV,rename_column
+Please replace the name COLUMN with NEW_COLUMN in the dataset,rename_column
+Could you rename the COLUMN column to NEW_COLUMN in this CSV,rename_column
+Could you delete COLUMN in the dataset,drop_column
+Change COLUMN to NEW_COLUMN in the dataset,rename_column
+Please replace blank values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Delete records with empty values,remove_missing_rows
+Get rid of duplicated records in this CSV,remove_duplicates
+Can you fill missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Please remove rows that appear more than once,remove_duplicates
+Please replace blank values in COLUMN with the median from this file,fill_missing_with_median
+Could you fill empty values in COLUMN using the average in the dataset,fill_missing_with_mean
+Please use the median to fill missing values in COLUMN in this CSV,fill_missing_with_median
+Can you use the median to fill missing values in COLUMN from this file,fill_missing_with_median
+Fill missing values in COLUMN with the median,fill_missing_with_median
+I need you to change COLUMN to NEW_COLUMN in this CSV,rename_column
+I need you to remove records that have empty fields in the dataset,remove_missing_rows
+Can you replace missing values in COLUMN with the average from this file,fill_missing_with_mean
+Please replace missing values in COLUMN with the average,fill_missing_with_mean
+I need you to change COLUMN to NEW_COLUMN from this file,rename_column
+Please drop rows with missing data from this file,remove_missing_rows
+Please change COLUMN to NEW_COLUMN in the dataset,rename_column
+Could you use the average to fill missing values in COLUMN in the dataset,fill_missing_with_mean
+Remove records that have empty fields in this CSV,remove_missing_rows
+Could you get rid of COLUMN,drop_column
+I need you to use the average to fill missing values in COLUMN in this CSV,fill_missing_with_mean
+Fill missing values in COLUMN with the mean from this file,fill_missing_with_mean
+I need you to replace missing values in COLUMN with the average,fill_missing_with_mean
+Please replace the name COLUMN with NEW_COLUMN,rename_column
+Please delete the COLUMN column in this CSV,drop_column
+Could you remove rows that contain blanks in the dataset,remove_missing_rows
+Please eliminate duplicate entries from this file,remove_duplicates
+Could you fill empty values in COLUMN using the median in this CSV,fill_missing_with_median
+Can you fill missing values in COLUMN with the mean from this file,fill_missing_with_mean
+I need you to delete records with empty values in this CSV,remove_missing_rows
+I need you to use the median to fill missing values in COLUMN in this CSV,fill_missing_with_median
+Could you delete records with empty values,remove_missing_rows
+Could you remove repeated rows in this CSV,remove_duplicates
+Can you delete duplicate records,remove_duplicates
+Could you fill missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Could you use the median for empty values in COLUMN,fill_missing_with_median
+Can you get rid of duplicated records,remove_duplicates
+Could you remove the field COLUMN from this file,drop_column
+Please remove rows that appear more than once in this CSV,remove_duplicates
+Could you change the name of COLUMN to NEW_COLUMN in the dataset,rename_column
+I need you to delete rows containing missing values,remove_missing_rows
+I need you to remove rows with missing values in this CSV,remove_missing_rows
+Could you fill missing values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Give COLUMN the new name NEW_COLUMN in this CSV,rename_column
+Please get rid of COLUMN in the dataset,drop_column
+Can you delete COLUMN in this CSV,drop_column
+Can you replace missing values in COLUMN with the median from this file,fill_missing_with_median
+Use the average to fill missing values in COLUMN,fill_missing_with_mean
+Could you remove rows that contain blanks from this file,remove_missing_rows
+Replace missing values in COLUMN with the median,fill_missing_with_median
+Could you replace missing values in COLUMN with the median from this file,fill_missing_with_median
+I need you to get rid of duplicated records,remove_duplicates
+Could you remove the COLUMN column,drop_column
+Can you eliminate duplicate entries from this file,remove_duplicates
+Please remove the field COLUMN,drop_column
+Please delete repeated entries in this CSV,remove_duplicates
+I need you to get rid of duplicated records in this CSV,remove_duplicates
+I need you to remove rows that appear more than once in the dataset,remove_duplicates
+Can you remove records that have empty fields in this CSV,remove_missing_rows
+Replace blank values in COLUMN with the median from this file,fill_missing_with_median
+Could you delete repeated entries in this CSV,remove_duplicates
+Please rename COLUMN to NEW_COLUMN in this CSV,rename_column
+Get rid of incomplete records in this CSV,remove_missing_rows
+Could you remove duplicate rows in this CSV,remove_duplicates
+Can you replace the name COLUMN with NEW_COLUMN in this CSV,rename_column
+Can you remove the field COLUMN,drop_column
+Please change the name of COLUMN to NEW_COLUMN in the dataset,rename_column
+Can you replace missing values in COLUMN with the average in this CSV,fill_missing_with_mean
+I need you to remove the COLUMN column from this file,drop_column
+Please remove duplicate rows,remove_duplicates
+Could you rename COLUMN to NEW_COLUMN from this file,rename_column
+Can you replace blank values in COLUMN with the mean in this CSV,fill_missing_with_mean
+I need you to drop the COLUMN column from this file,drop_column
+Could you replace blank values in COLUMN with the median,fill_missing_with_median
+Please get rid of duplicated records from this file,remove_duplicates
+Fill missing values in COLUMN with the median from this file,fill_missing_with_median
+Get rid of COLUMN from this file,drop_column
+Rename COLUMN to NEW_COLUMN,rename_column
+Please rename COLUMN to NEW_COLUMN,rename_column
+Please replace blank values in COLUMN with the median in the dataset,fill_missing_with_median
+Please replace missing values in COLUMN with the median from this file,fill_missing_with_median
+Please replace missing values in COLUMN with the average in the dataset,fill_missing_with_mean
+Could you use the average to fill missing values in COLUMN,fill_missing_with_mean
+Please replace blank values in COLUMN with the median in this CSV,fill_missing_with_median
+I need you to rename COLUMN to NEW_COLUMN,rename_column
+Please remove rows with missing values in the dataset,remove_missing_rows
+Please fill missing values in COLUMN with the median in the dataset,fill_missing_with_median
+I need you to keep only unique rows in this CSV,remove_duplicates
+I need you to remove rows that appear more than once from this file,remove_duplicates
+Please remove rows that contain blanks in the dataset,remove_missing_rows
+Please change COLUMN to NEW_COLUMN in this CSV,rename_column
+I need you to change the name of COLUMN to NEW_COLUMN in the dataset,rename_column
+Can you replace missing values in COLUMN with the average,fill_missing_with_mean
+Delete duplicate records in this CSV,remove_duplicates
+Could you use the average to fill missing values in COLUMN from this file,fill_missing_with_mean
+Can you change the name of COLUMN to NEW_COLUMN in the dataset,rename_column
+Please fill missing values in COLUMN with the median,fill_missing_with_median
+Can you remove duplicate rows in this CSV,remove_duplicates
+Could you fill empty values in COLUMN using the median in the dataset,fill_missing_with_median
+Could you delete the COLUMN column in the dataset,drop_column
+Remove rows that contain blanks,remove_missing_rows
+Can you get rid of duplicated records from this file,remove_duplicates
+Could you delete COLUMN in this CSV,drop_column
+I need you to remove repeated rows from this file,remove_duplicates
+Could you fill missing values in COLUMN with the mean,fill_missing_with_mean
+Please delete COLUMN from this file,drop_column
+I need you to fill missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Can you remove incomplete rows,remove_missing_rows
+Can you fill empty values in COLUMN using the average,fill_missing_with_mean
+Please remove the COLUMN column in the dataset,drop_column
+Could you replace missing values in COLUMN with the average in this CSV,fill_missing_with_mean
+Please rename the COLUMN column to NEW_COLUMN in this CSV,rename_column
+I need you to delete rows containing missing values in the dataset,remove_missing_rows
+Can you drop rows with missing data,remove_missing_rows
+Remove repeated rows from this file,remove_duplicates
+Eliminate duplicate entries,remove_duplicates
+Can you fill empty values in COLUMN using the average in the dataset,fill_missing_with_mean
+Please delete rows containing missing values from this file,remove_missing_rows
+Please delete rows containing missing values,remove_missing_rows
+Drop rows with missing data in this CSV,remove_missing_rows
+Remove records that have empty fields from this file,remove_missing_rows
+Can you delete COLUMN from this file,drop_column
+Change COLUMN to NEW_COLUMN in this CSV,rename_column
+Rename the COLUMN column to NEW_COLUMN in the dataset,rename_column
+Change COLUMN to NEW_COLUMN,rename_column
+Please replace blank values in COLUMN with the mean,fill_missing_with_mean
+Can you rename COLUMN to NEW_COLUMN,rename_column
+I need you to get rid of COLUMN from this file,drop_column
+Remove duplicate rows in this CSV,remove_duplicates
+Please delete records with empty values from this file,remove_missing_rows
+Please rename COLUMN to NEW_COLUMN from this file,rename_column
+I need you to use the mean for empty values in COLUMN in this CSV,fill_missing_with_mean
+Please replace blank values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Replace blank values in COLUMN with the mean in the dataset,fill_missing_with_mean
+I need you to remove rows that appear more than once,remove_duplicates
+Can you replace missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Fill empty values in COLUMN using the median in the dataset,fill_missing_with_median
+Please replace missing values in COLUMN with the median in this CSV,fill_missing_with_median
+Can you get rid of COLUMN,drop_column
+I need you to remove incomplete rows,remove_missing_rows
+I need you to replace blank values in COLUMN with the median in this CSV,fill_missing_with_median
+Replace the name COLUMN with NEW_COLUMN in this CSV,rename_column
+Can you use the median to fill missing values in COLUMN in this CSV,fill_missing_with_median
+Can you rename the COLUMN column to NEW_COLUMN from this file,rename_column
+Could you fill missing values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Can you fill empty values in COLUMN using the average in this CSV,fill_missing_with_mean
+Could you replace missing values in COLUMN with the median,fill_missing_with_median
+Can you use the median for empty values in COLUMN in this CSV,fill_missing_with_median
+Fill empty values in COLUMN using the average from this file,fill_missing_with_mean
+Please get rid of COLUMN in this CSV,drop_column
+Could you delete COLUMN from this file,drop_column
+Please remove rows that appear more than once in the dataset,remove_duplicates
+Remove rows with missing values in this CSV,remove_missing_rows
+Remove the field COLUMN,drop_column
+Could you remove records that have empty fields in the dataset,remove_missing_rows
+Can you fill empty values in COLUMN using the median in the dataset,fill_missing_with_median
+Please change COLUMN to NEW_COLUMN from this file,rename_column
+I need you to use the median for empty values in COLUMN from this file,fill_missing_with_median
+I need you to remove duplicate rows from this file,remove_duplicates
+Could you fill empty values in COLUMN using the average,fill_missing_with_mean
+Could you remove repeated rows from this file,remove_duplicates
+Drop the COLUMN column from this file,drop_column
+I need you to replace blank values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Can you change COLUMN to NEW_COLUMN in the dataset,rename_column
+Please replace missing values in COLUMN with the average from this file,fill_missing_with_mean
+Can you get rid of incomplete records in the dataset,remove_missing_rows
+Please remove the field COLUMN from this file,drop_column
+Can you drop rows with missing data in the dataset,remove_missing_rows
+Could you use the mean for empty values in COLUMN in this CSV,fill_missing_with_mean
+Remove the COLUMN column in this CSV,drop_column
+Please rename the COLUMN column to NEW_COLUMN,rename_column
+I need you to get rid of COLUMN,drop_column
+Could you get rid of duplicated records,remove_duplicates
+I need you to remove records that have empty fields from this file,remove_missing_rows
+I need you to remove rows with missing values,remove_missing_rows
+Use the median for empty values in COLUMN,fill_missing_with_median
+Can you change COLUMN to NEW_COLUMN in this CSV,rename_column
+Can you fill empty values in COLUMN using the median,fill_missing_with_median
+Please replace missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Delete COLUMN,drop_column
+Could you remove rows that contain blanks,remove_missing_rows
+I need you to replace blank values in COLUMN with the median,fill_missing_with_median
+Please delete duplicate records in this CSV,remove_duplicates
+Please keep only unique rows in the dataset,remove_duplicates
+Can you delete repeated entries from this file,remove_duplicates
+I need you to delete the COLUMN column from this file,drop_column
+Could you use the median to fill missing values in COLUMN from this file,fill_missing_with_median
+Can you remove rows with missing values in the dataset,remove_missing_rows
+I need you to fill empty values in COLUMN using the median,fill_missing_with_median
+Could you rename the COLUMN column to NEW_COLUMN from this file,rename_column
+I need you to replace missing values in COLUMN with the average in this CSV,fill_missing_with_mean
+Get rid of incomplete records from this file,remove_missing_rows
+I need you to change the name of COLUMN to NEW_COLUMN,rename_column
+Change COLUMN to NEW_COLUMN from this file,rename_column
+Can you get rid of incomplete records,remove_missing_rows
+Can you rename COLUMN to NEW_COLUMN in this CSV,rename_column
+Please remove records that have empty fields,remove_missing_rows
+Can you remove repeated rows in this CSV,remove_duplicates
+I need you to change COLUMN to NEW_COLUMN,rename_column
+Please delete the COLUMN column in the dataset,drop_column
+Could you replace missing values in COLUMN with the average,fill_missing_with_mean
+Please remove rows that contain blanks in this CSV,remove_missing_rows
+Could you delete repeated entries in the dataset,remove_duplicates
+Use the average to fill missing values in COLUMN from this file,fill_missing_with_mean
+Please get rid of COLUMN from this file,drop_column
+I need you to change the name of COLUMN to NEW_COLUMN from this file,rename_column
+I need you to use the median for empty values in COLUMN in this CSV,fill_missing_with_median
+Please remove repeated rows from this file,remove_duplicates
+Remove the COLUMN column from this file,drop_column
+Can you get rid of duplicated records in this CSV,remove_duplicates
+Remove rows that contain blanks in the dataset,remove_missing_rows
+Please use the average to fill missing values in COLUMN in the dataset,fill_missing_with_mean
+Please remove rows that contain blanks from this file,remove_missing_rows
+Please delete duplicate records from this file,remove_duplicates
+Please use the mean for empty values in COLUMN in the dataset,fill_missing_with_mean
+Can you delete records with empty values from this file,remove_missing_rows
+Delete rows containing missing values,remove_missing_rows
+I need you to eliminate duplicate entries,remove_duplicates
+Could you keep only unique rows in the dataset,remove_duplicates
+I need you to replace blank values in COLUMN with the mean from this file,fill_missing_with_mean
+Use the median for empty values in COLUMN in the dataset,fill_missing_with_median
+I need you to fill missing values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Can you replace blank values in COLUMN with the median in this CSV,fill_missing_with_median
+I need you to rename COLUMN to NEW_COLUMN from this file,rename_column
+Can you fill empty values in COLUMN using the median in this CSV,fill_missing_with_median
+Could you drop the COLUMN column,drop_column
+Could you get rid of incomplete records in the dataset,remove_missing_rows
+Could you fill missing values in COLUMN with the median,fill_missing_with_median
+Could you get rid of incomplete records from this file,remove_missing_rows
+I need you to replace missing values in COLUMN with the average from this file,fill_missing_with_mean
+I need you to replace the name COLUMN with NEW_COLUMN in this CSV,rename_column
+Can you fill empty values in COLUMN using the average from this file,fill_missing_with_mean
+I need you to delete records with empty values,remove_missing_rows
+Delete records with empty values from this file,remove_missing_rows
+Can you get rid of duplicated records in the dataset,remove_duplicates
+Could you remove rows that appear more than once from this file,remove_duplicates
+Please remove the COLUMN column from this file,drop_column
+Could you use the median to fill missing values in COLUMN,fill_missing_with_median
+Can you keep only unique rows from this file,remove_duplicates
+Could you remove repeated rows in the dataset,remove_duplicates
+I need you to remove the COLUMN column in the dataset,drop_column
+Please fill missing values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Please get rid of duplicated records,remove_duplicates
+I need you to remove incomplete rows in this CSV,remove_missing_rows
+Could you give COLUMN the new name NEW_COLUMN in this CSV,rename_column
+I need you to fill missing values in COLUMN with the median,fill_missing_with_median
+Remove the COLUMN column,drop_column
+I need you to drop the COLUMN column in the dataset,drop_column
+Could you replace missing values in COLUMN with the average in the dataset,fill_missing_with_mean
+Change the name of COLUMN to NEW_COLUMN from this file,rename_column
+Could you keep only unique rows from this file,remove_duplicates
+Could you change COLUMN to NEW_COLUMN from this file,rename_column
+Get rid of COLUMN in the dataset,drop_column
+Use the mean for empty values in COLUMN in the dataset,fill_missing_with_mean
+Can you rename the COLUMN column to NEW_COLUMN,rename_column
+I need you to remove repeated rows,remove_duplicates
+I need you to remove duplicate rows in this CSV,remove_duplicates
+Fill empty values in COLUMN using the average in the dataset,fill_missing_with_mean
+Please remove incomplete rows from this file,remove_missing_rows
+Please delete the COLUMN column from this file,drop_column
+Can you remove duplicate rows,remove_duplicates
+I need you to fill empty values in COLUMN using the average,fill_missing_with_mean
+Delete records with empty values in the dataset,remove_missing_rows
+Could you fill missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you remove records that have empty fields from this file,remove_missing_rows
+Can you use the average to fill missing values in COLUMN,fill_missing_with_mean
+Could you delete rows containing missing values in the dataset,remove_missing_rows
+I need you to delete repeated entries in the dataset,remove_duplicates
+Could you fill empty values in COLUMN using the average from this file,fill_missing_with_mean
+I need you to delete COLUMN in the dataset,drop_column
+Please fill empty values in COLUMN using the average in the dataset,fill_missing_with_mean
+Give COLUMN the new name NEW_COLUMN in the dataset,rename_column
+Can you delete rows containing missing values in the dataset,remove_missing_rows
+Could you remove incomplete rows,remove_missing_rows
+I need you to drop rows with missing data in this CSV,remove_missing_rows
+Delete the COLUMN column from this file,drop_column
+Please remove rows with missing values from this file,remove_missing_rows
+Fill missing values in COLUMN with the mean in the dataset,fill_missing_with_mean
+I need you to drop rows with missing data from this file,remove_missing_rows
+Please give COLUMN the new name NEW_COLUMN,rename_column
+Can you remove rows that contain blanks from this file,remove_missing_rows
+Fill empty values in COLUMN using the average,fill_missing_with_mean
+Please give COLUMN the new name NEW_COLUMN in the dataset,rename_column
+Can you use the average to fill missing values in COLUMN in this CSV,fill_missing_with_mean
+I need you to replace missing values in COLUMN with the median from this file,fill_missing_with_median
+Replace blank values in COLUMN with the median,fill_missing_with_median
+Could you replace missing values in COLUMN with the average from this file,fill_missing_with_mean
+Remove the field COLUMN from this file,drop_column
+I need you to replace missing values in COLUMN with the median in this CSV,fill_missing_with_median
+I need you to replace missing values in COLUMN with the average in the dataset,fill_missing_with_mean
+I need you to delete the COLUMN column,drop_column
+Delete the COLUMN column in the dataset,drop_column
+I need you to drop the COLUMN column,drop_column
+I need you to give COLUMN the new name NEW_COLUMN from this file,rename_column
+Delete COLUMN in the dataset,drop_column
+Fill missing values in COLUMN with the mean,fill_missing_with_mean
+Please rename COLUMN to NEW_COLUMN in the dataset,rename_column
+Could you replace blank values in COLUMN with the median in this CSV,fill_missing_with_median
+I need you to delete rows containing missing values in this CSV,remove_missing_rows
+I need you to use the average to fill missing values in COLUMN in the dataset,fill_missing_with_mean
+Could you delete duplicate records from this file,remove_duplicates
+Please keep only unique rows in this CSV,remove_duplicates
+I need you to replace missing values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you drop the COLUMN column in this CSV,drop_column
+Can you drop the COLUMN column from this file,drop_column
+Please use the mean for empty values in COLUMN in this CSV,fill_missing_with_mean
+Can you get rid of COLUMN from this file,drop_column
+Could you delete the COLUMN column in this CSV,drop_column
+I need you to replace blank values in COLUMN with the median in the dataset,fill_missing_with_median
+Could you replace blank values in COLUMN with the mean,fill_missing_with_mean
+Could you delete repeated entries,remove_duplicates
+I need you to remove rows that contain blanks in this CSV,remove_missing_rows
+Could you remove the field COLUMN,drop_column
+Please delete duplicate records in the dataset,remove_duplicates
+Remove the COLUMN column in the dataset,drop_column
+Can you use the mean for empty values in COLUMN in the dataset,fill_missing_with_mean
+Rename the COLUMN column to NEW_COLUMN from this file,rename_column
+Could you use the average to fill missing values in COLUMN in this CSV,fill_missing_with_mean
+Can you use the mean for empty values in COLUMN from this file,fill_missing_with_mean
+Please fill empty values in COLUMN using the average,fill_missing_with_mean
+Please replace blank values in COLUMN with the median,fill_missing_with_median
+I need you to remove incomplete rows from this file,remove_missing_rows
+I need you to delete COLUMN in this CSV,drop_column
+Can you delete rows containing missing values from this file,remove_missing_rows
+Replace blank values in COLUMN with the mean,fill_missing_with_mean
+Please drop the COLUMN column in this CSV,drop_column
+Could you eliminate duplicate entries,remove_duplicates
+I need you to fill missing values in COLUMN with the mean,fill_missing_with_mean
+Could you use the median for empty values in COLUMN in the dataset,fill_missing_with_median
+Could you rename COLUMN to NEW_COLUMN in this CSV,rename_column
+I need you to delete the COLUMN column in this CSV,drop_column
+Can you replace blank values in COLUMN with the median from this file,fill_missing_with_median
+Fill missing values in COLUMN with the mean in this CSV,fill_missing_with_mean
+Replace blank values in COLUMN with the median in this CSV,fill_missing_with_median
+Please fill missing values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Could you remove duplicate rows,remove_duplicates
+Could you use the mean for empty values in COLUMN,fill_missing_with_mean
+Please fill empty values in COLUMN using the average from this file,fill_missing_with_mean
+Can you replace blank values in COLUMN with the mean from this file,fill_missing_with_mean
+Could you rename the COLUMN column to NEW_COLUMN in the dataset,rename_column
+I need you to use the median to fill missing values in COLUMN from this file,fill_missing_with_median
+I need you to rename the COLUMN column to NEW_COLUMN in this CSV,rename_column
+Can you delete the COLUMN column from this file,drop_column
+Could you remove the field COLUMN in this CSV,drop_column
+Can you change COLUMN to NEW_COLUMN,rename_column
+Could you fill empty values in COLUMN using the average in this CSV,fill_missing_with_mean
+Could you change the name of COLUMN to NEW_COLUMN,rename_column
+Can you delete the COLUMN column,drop_column
+Remove rows with missing values from this file,remove_missing_rows
+Fill empty values in COLUMN using the median from this file,fill_missing_with_median
+I need you to get rid of incomplete records from this file,remove_missing_rows
+Can you replace blank values in COLUMN with the median in the dataset,fill_missing_with_median
+Can you change the name of COLUMN to NEW_COLUMN from this file,rename_column
+Please use the median to fill missing values in COLUMN in the dataset,fill_missing_with_median
+Please use the median for empty values in COLUMN in this CSV,fill_missing_with_median
+Get rid of duplicated records from this file,remove_duplicates
+Get rid of COLUMN in this CSV,drop_column
+Fill empty values in COLUMN using the median,fill_missing_with_median
+I need you to delete repeated entries from this file,remove_duplicates
+I need you to replace blank values in COLUMN with the mean in the dataset,fill_missing_with_mean
+Rename COLUMN to NEW_COLUMN in this CSV,rename_column
+Can you remove the field COLUMN from this file,drop_column
+Please delete repeated entries in the dataset,remove_duplicates
+Could you replace missing values in COLUMN with the median in this CSV,fill_missing_with_median
+I need you to replace the name COLUMN with NEW_COLUMN from this file,rename_column
+I need you to replace blank values in COLUMN with the median from this file,fill_missing_with_median
+Can you remove the COLUMN column,drop_column
+I need you to replace blank values in COLUMN with the mean,fill_missing_with_mean
+Remove rows that appear more than once from this file,remove_duplicates
+I need you to remove the COLUMN column,drop_column
+I need you to delete records with empty values from this file,remove_missing_rows
+I need you to give COLUMN the new name NEW_COLUMN in the dataset,rename_column
+Please use the average to fill missing values in COLUMN from this file,fill_missing_with_mean
+Can you eliminate duplicate entries,remove_duplicates
+Can you fill missing values in COLUMN with the mean in the dataset,fill_missing_with_mean
+I need you to change COLUMN to NEW_COLUMN in the dataset,rename_column
+Please change the name of COLUMN to NEW_COLUMN from this file,rename_column
+Remove rows that appear more than once,remove_duplicates
+Can you remove rows with missing values,remove_missing_rows
+Use the median to fill missing values in COLUMN in the dataset,fill_missing_with_median
+Can you use the median to fill missing values in COLUMN in the dataset,fill_missing_with_median
+Can you replace the name COLUMN with NEW_COLUMN in the dataset,rename_column
+Please delete COLUMN in the dataset,drop_column
+I need you to use the average to fill missing values in COLUMN from this file,fill_missing_with_mean
+Eliminate duplicate entries from this file,remove_duplicates
+Can you delete the COLUMN column in this CSV,drop_column
+Could you delete duplicate records in the dataset,remove_duplicates
+Could you use the mean for empty values in COLUMN in the dataset,fill_missing_with_mean
+Can you remove records that have empty fields,remove_missing_rows
+Could you replace the name COLUMN with NEW_COLUMN in the dataset,rename_column
+Give COLUMN the new name NEW_COLUMN,rename_column
+Could you give COLUMN the new name NEW_COLUMN from this file,rename_column
+I need you to remove rows with missing values from this file,remove_missing_rows
+Please use the median for empty values in COLUMN from this file,fill_missing_with_median
+Fill empty values in COLUMN using the average in this CSV,fill_missing_with_mean
+Use the median to fill missing values in COLUMN from this file,fill_missing_with_median
+Can you get rid of incomplete records in this CSV,remove_missing_rows
+Could you remove the COLUMN column from this file,drop_column
+I need you to remove duplicate rows,remove_duplicates
+Could you change the name of COLUMN to NEW_COLUMN in this CSV,rename_column
