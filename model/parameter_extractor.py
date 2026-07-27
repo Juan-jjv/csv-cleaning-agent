@@ -10,13 +10,6 @@ COLUMN_ACTIONS = {
 
 
 def _column_variants(column: str) -> list[str]:
-    """
-    Generate ways a user might write a column name.
-
-    employee_id:
-        employee_id
-        employee id
-    """
 
     variants = {
         column,
@@ -31,9 +24,6 @@ def _find_column_match(
     instruction: str,
     columns: list[str],
 ):
-    """
-    Find which real DataFrame column is mentioned in the instruction.
-    """
 
     candidates = []
 
@@ -41,8 +31,6 @@ def _find_column_match(
         for variant in _column_variants(column):
             candidates.append((column, variant))
 
-    # Try longer names first.
-    # This prevents "id" from being selected before "employee_id".
     candidates.sort(
         key=lambda item: len(item[1]),
         reverse=True,
@@ -131,9 +119,6 @@ def normalize_instruction(
     instruction: str,
     columns: list[str],
 ) -> str:
-    """
-    Replace real column names with placeholders used during training.
-    """
 
     result = _find_column_match(
         instruction,
@@ -171,7 +156,6 @@ def extract_parameters(
     action: str,
 ) -> dict[str, str]:
 
-    # These actions don't require column parameters.
     if action not in COLUMN_ACTIONS:
         return {}
 
