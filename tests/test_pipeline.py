@@ -9,7 +9,7 @@ def test_pipeline_fill_mean():
         "salary": [50000, None, 70000],
     })
 
-    result, command, confidence = clean_dataframe(
+    result, command, confidence, summary = clean_dataframe(
         dataframe,
         "Fill missing salary values with the average",
     )
@@ -24,6 +24,11 @@ def test_pipeline_fill_mean():
     assert result.loc[1, "salary"] == 60000
     assert result["salary"].isna().sum() == 0
 
+    assert summary["column"] == "salary"
+    assert summary["missing_before"] == 1
+    assert summary["missing_after"] == 0
+    assert summary["values_filled"] == 1
+
     assert pd.isna(dataframe.loc[1, "salary"])
 
 
@@ -33,7 +38,7 @@ def test_pipeline_remove_duplicates():
         "age": [20, 25, 20],
     })
 
-    result, command, confidence = clean_dataframe(
+    result, command, confidence, summary = clean_dataframe(
         dataframe,
         "Get rid of duplicate records",
     )
@@ -47,6 +52,62 @@ def test_pipeline_remove_duplicates():
     assert len(result) == 2
     assert len(dataframe) == 3
 
+    assert summary["rows_before"] == 3
+    assert summary["rows_after"] == 2
+    assert summary["rows_removed"] == 1
+
+
+def test_pipeline_remove_missing_rows():
+    dataframe = pd.DataFrame({
+        "name": ["John", "Bob", "Alice"],
+        "age": [20, None, 30],
+    })
+
+    result, command, confidence, summary = clean_dataframe(
+        dataframe,
+        "Remove rows with missing values",
+    )
+
+    assert command == {
+        "action": "remove_missing_rows",
+    }
+
+    assert 0 <= confidence <= 1
+
+    assert len(result) == 2
+    assert len(dataframe) == 3
+
+    assert summary["rows_before"] == 3
+    assert summary["rows_after"] == 2
+    assert summary["rows_removed"] == 1
+
+
+def test_pipeline_drop_column():
+    dataframe = pd.DataFrame({
+        "name": ["John", "Bob"],
+        "age": [20, 25],
+        "salary": [50000, 60000],
+    })
+
+    result, command, confidence, summary = clean_dataframe(
+        dataframe,
+        "Remove the salary column",
+    )
+
+    assert command == {
+        "action": "drop_column",
+        "column": "salary",
+    }
+
+    assert 0 <= confidence <= 1
+
+    assert "salary" not in result.columns
+    assert "salary" in dataframe.columns
+
+    assert summary["column_removed"] == "salary"
+    assert summary["columns_before"] == 3
+    assert summary["columns_after"] == 2
+
 
 def test_pipeline_rename_column():
     dataframe = pd.DataFrame({
@@ -54,7 +115,7 @@ def test_pipeline_rename_column():
         "name": ["John", "Bob", "Alice"],
     })
 
-    result, command, confidence = clean_dataframe(
+    result, command, confidence, summary = clean_dataframe(
         dataframe,
         "Rename employee_id to worker_id",
     )
@@ -70,4 +131,8 @@ def test_pipeline_rename_column():
     assert "worker_id" in result.columns
     assert "employee_id" not in result.columns
 
+    assert summary["old_name"] == "employee_id"
+    assert summary["new_name"] == "worker_id"
+
     assert "employee_id" in dataframe.columns
+    assert "worker_id" not in dataframe.columns

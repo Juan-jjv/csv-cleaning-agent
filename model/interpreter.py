@@ -11,7 +11,7 @@ from model.parameter_extractor import (
 
 MODEL_PATH = Path(__file__).with_name("action_classifier.joblib")
 
-MIN_CONFIDENCE = 0.60
+MIN_CONFIDENCE =  0.50
 
 
 @lru_cache(maxsize=1)
