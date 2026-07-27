@@ -94,6 +94,15 @@ def generate_remove_missing_rows() -> list[str]:
         "filter out observations with missing information",
         "omit rows that are not fully populated",
         "leave out rows where any field is empty",
+
+        "remove missing values in COLUMN",
+        "remove rows where COLUMN is missing",
+        "delete records with missing COLUMN values",
+        "drop rows where COLUMN is empty",
+        "remove entries with blank values in COLUMN",
+        "discard records where COLUMN has no value",
+        "filter out rows with missing COLUMN values",
+        "remove records where the COLUMN field is blank",
     ]
 
     return add_sentence_variations(phrases)
@@ -234,6 +243,47 @@ def generate_rename_column() -> list[str]:
 
     return add_sentence_variations(phrases)
 
+def generate_unsupported() -> list[str]:
+    phrases = [
+        "make the data better",
+        "clean up this dataset",
+        "make this file nicer",
+        "improve the data",
+        "fix this dataset",
+        "do something useful with the data",
+
+        "sort the dataset",
+        "sort the rows",
+        "order the data alphabetically",
+        "sort COLUMN from highest to lowest",
+
+        "show me the average of COLUMN",
+        "calculate the mean of COLUMN",
+        "what is the median of COLUMN",
+        "tell me the maximum value in COLUMN",
+        "find the minimum value in COLUMN",
+
+        "show me the columns",
+        "tell me how many rows there are",
+        "show the missing values",
+        "describe the dataset",
+        "summarize the data",
+
+        "convert this file to JSON",
+        "export this as Excel",
+        "create a chart",
+        "plot COLUMN",
+        "make a graph of COLUMN",
+
+        "find unusual values",
+        "detect outliers",
+        "normalize COLUMN",
+        "standardize COLUMN",
+        "combine two columns",
+        "split COLUMN into two columns",
+    ]
+
+    return add_sentence_variations(phrases)
 
 def create_examples(
     examples: list[str],
@@ -256,7 +306,8 @@ def main() -> None:
         "fill_missing_with_median": generate_fill_missing_with_median,
         "drop_column": generate_drop_column,
         "rename_column": generate_rename_column,
-    }
+        "unsupported": generate_unsupported,
+    }   
 
     training_rows = []
 

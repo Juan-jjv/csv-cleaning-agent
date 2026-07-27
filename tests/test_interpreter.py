@@ -93,3 +93,19 @@ def test_interpret_rename_column():
     }
 
     assert 0 <= confidence <= 1
+
+def test_reject_unsupported_instruction():
+    columns = [
+        "name",
+        "age",
+        "salary",
+    ]
+
+    with pytest.raises(
+        ValueError,
+        match="does not match a supported cleaning action",
+    ):
+        interpret_instruction(
+            "Create a graph of salary",
+            columns,
+        )
