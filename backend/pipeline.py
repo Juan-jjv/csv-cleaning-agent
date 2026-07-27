@@ -9,11 +9,15 @@ from model.interpreter import interpret_instruction
 def clean_dataframe(
     dataframe: pd.DataFrame,
     instruction: str,
-) -> tuple[pd.DataFrame, dict]:
+) -> tuple[pd.DataFrame, dict, float]:
 
     working_dataframe = dataframe.copy()
-    analysis = analyze_dataframe(working_dataframe)
-    command = interpret_instruction(
+
+    analysis = analyze_dataframe(
+        working_dataframe
+    )
+
+    command, confidence = interpret_instruction(
         instruction,
         analysis["columns"],
     )
@@ -28,4 +32,8 @@ def clean_dataframe(
         command,
     )
 
-    return cleaned_dataframe, command
+    return (
+        cleaned_dataframe,
+        command,
+        confidence,
+    )

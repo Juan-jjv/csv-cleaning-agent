@@ -88,15 +88,17 @@ def main() -> None:
             continue
 
         try:
-            cleaned_dataframe, command = clean_dataframe(
+            cleaned_dataframe, command, confidence = clean_dataframe(
                 dataframe,
                 instruction,
             )
-
+            
             print("\nAI prediction:")
             for key, value in command.items():
                 print(f"  {key}: {value}")
 
+            print(f"  confidence: {confidence:.1%}")
+            
             dataframe = cleaned_dataframe
 
             print("\nCleaning completed.")
