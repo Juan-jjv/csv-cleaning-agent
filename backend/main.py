@@ -3,9 +3,11 @@ from pathlib import Path
 from uuid import uuid4
 
 import pandas as pd
-from fastapi import FastAPI, HTTPException, UploadFile
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from pydantic import BaseModel
 
 from backend.csv_analyzer import analyze_dataframe
+from backend.pipeline import clean_dataframe
 from backend.session_store import SessionData, sessions
 
 
@@ -13,6 +15,10 @@ app = FastAPI(
     title="CSV Cleaning Agent API",
     version="1.0.0",
 )
+
+class CleanRequest(BaseModel):
+    session_id: str
+    instruction: str
 
 
 def create_preview(
@@ -31,6 +37,7 @@ def create_preview(
 def create_dashboard_data(
     dataframe: pd.DataFrame,
 ) -> dict:
+
     analysis = analyze_dataframe(dataframe)
 
     total_missing = sum(
@@ -58,7 +65,9 @@ def health_check():
 
 
 @app.post("/upload")
-def upload_csv(file: UploadFile):
+def upload_csv(
+    file: UploadFile = File(...),
+):
     filename = file.filename or ""
 
     if Path(filename).suffix.lower() != ".csv":
@@ -99,4 +108,53 @@ def upload_csv(file: UploadFile):
         "session_id": session_id,
         "filename": filename,
         **create_dashboard_data(dataframe),
+    }
+
+
+@app.post("/clean")
+def clean_csv(
+    request: CleanRequest,
+):
+    session = sessions.get(request.session_id)
+
+    if session is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Session not found.",
+        )
+
+    instruction = request.instruction.strip()
+
+    if not instruction:
+        raise HTTPException(
+            status_code=400,
+            detail="Cleaning instruction cannot be empty.",
+        )
+
+    try:
+        (
+            cleaned_dataframe,
+            command,
+            confidence,
+            summary,
+        ) = clean_dataframe(
+            session.dataframe,
+            instruction,
+        )
+
+    except ValueError as error:
+        raise HTTPException(
+            status_code=400,
+            detail=str(error),
+        )
+
+    session.dataframe = cleaned_dataframe
+
+    return {
+        "session_id": request.session_id,
+        "filename": session.filename,
+        "command": command,
+        "confidence": confidence,
+        "summary": summary,
+        **create_dashboard_data(cleaned_dataframe),
     }
