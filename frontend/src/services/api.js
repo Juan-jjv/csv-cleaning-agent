@@ -23,3 +23,34 @@ export async function uploadCsv(file) {
 
     return response.json();
 }
+
+export async function cleanCsv(
+    sessionId,
+    instruction,
+) {
+    const response = await fetch(
+        `${API_BASE_URL}/clean`,
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+                session_id: sessionId,
+                instruction: instruction,
+            }),
+        }
+    );
+
+    if (!response.ok) {
+        const errorData = await response.json();
+
+        throw new Error(
+            errorData.detail || "Failed to clean CSV."
+        );
+    }
+
+    return response.json();
+}

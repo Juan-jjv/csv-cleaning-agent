@@ -1,7 +1,11 @@
 import { useState } from "react";
 
-import { uploadCsv } from "./services/api";
+import {
+    uploadCsv,
+    cleanCsv,
+} from "./services/api";
 
+import CleaningAssistant from "./components/CleaningAssistant";
 import "./App.css";
 
 
@@ -15,6 +19,8 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
+    const [cleaning, setCleaning] = useState(false);
+    const [cleaningResult, setCleaningResult] = useState(null);
 
     async function handleUpload(event) {
         const file = event.target.files[0];
@@ -40,6 +46,38 @@ function App() {
 
         } finally {
             setLoading(false);
+        }
+    }
+
+    async function handleClean(instruction) {
+        if (!sessionId) {
+            return;
+        }
+
+        setCleaning(true);
+        setError("");
+
+        try {
+            const data = await cleanCsv(
+                sessionId,
+                instruction,
+            );
+
+            setStats(data.stats);
+            setColumnNames(data.column_names);
+            setPreview(data.preview);
+
+            setCleaningResult({
+                command: data.command,
+                confidence: data.confidence,
+                summary: data.summary,
+            });
+
+        } catch (error) {
+            setError(error.message);
+
+        } finally {
+            setCleaning(false);
         }
     }
 
@@ -118,6 +156,14 @@ function App() {
                             columns={columnNames}
                             rows={preview}
                         />
+
+                        <CleaningAssistant
+                            onClean={handleClean}
+                            loading={cleaning}
+                            disabled={!sessionId}
+                            result={cleaningResult}
+                        />
+                        
                     </section>
                 </>
             )}
