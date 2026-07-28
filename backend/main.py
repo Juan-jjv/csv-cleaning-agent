@@ -1,9 +1,11 @@
 import json
+from io import StringIO
 from pathlib import Path
 from uuid import uuid4
 
 import pandas as pd
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from backend.csv_analyzer import analyze_dataframe
@@ -158,3 +160,37 @@ def clean_csv(
         "summary": summary,
         **create_dashboard_data(cleaned_dataframe),
     }
+
+@app.get("/download/{session_id}")
+def download_csv(session_id: str):
+    session = sessions.get(session_id)
+
+    if session is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Session not found.",
+        )
+
+    csv_buffer = StringIO()
+
+    session.dataframe.to_csv(
+        csv_buffer,
+        index=False,
+    )
+
+    csv_buffer.seek(0)
+
+    original_name = Path(session.filename)
+
+    download_name = (
+        f"cleaned_{original_name.stem}.csv"
+    )
+
+    return StreamingResponse(
+        csv_buffer,
+        media_type="text/csv",
+        headers={
+            "Content-Disposition":
+                f'attachment; filename="{download_name}"'
+        },
+    )
