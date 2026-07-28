@@ -7,6 +7,7 @@ import pandas as pd
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.csv_analyzer import analyze_dataframe
 from backend.pipeline import clean_dataframe
@@ -16,6 +17,16 @@ from backend.session_store import SessionData, sessions
 app = FastAPI(
     title="CSV Cleaning Agent API",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class CleanRequest(BaseModel):
