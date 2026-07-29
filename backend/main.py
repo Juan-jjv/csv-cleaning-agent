@@ -4,7 +4,7 @@ from pathlib import Path
 from uuid import uuid4
 
 import pandas as pd
-from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi import FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -205,3 +205,48 @@ def download_csv(session_id: str):
                 f'attachment; filename="{download_name}"'
         },
     )
+
+@app.get("/data/{session_id}")
+def get_session_data(
+    session_id: str,
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=50, ge=1, le=200),
+):
+    session = sessions.get(session_id)
+
+    if session is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Session not found.",
+        )
+
+    dataframe = session.dataframe
+
+    total_rows = len(dataframe)
+
+    start = (page - 1) * page_size
+    end = start + page_size
+
+    page_dataframe = dataframe.iloc[start:end]
+
+    rows = json.loads(
+        page_dataframe.to_json(
+            orient="records",
+            date_format="iso",
+        )
+    )
+
+    total_pages = (
+        (total_rows + page_size - 1) // page_size
+        if total_rows > 0
+        else 0
+    )
+
+    return {
+        "columns": dataframe.columns.tolist(),
+        "rows": rows,
+        "page": page,
+        "page_size": page_size,
+        "total_rows": total_rows,
+        "total_pages": total_pages,
+    }

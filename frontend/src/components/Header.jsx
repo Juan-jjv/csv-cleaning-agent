@@ -10,12 +10,10 @@ function Header({
     downloadDisabled,
 }) {
     return (
-        <header className="header">
+        <header className="page-header">
 
-            <div>
-                <h1>CSV Cleaning Agent</h1>
-                <p>Clean and transform your data with AI</p>
-            </div>
+            <h1>CSV Cleaning Agent</h1>
+
 
             <div className="header-actions">
 

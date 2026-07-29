@@ -1,13 +1,10 @@
 import { useState } from "react";
 
-import ChangeSummary from "./ChangeSummary";
-
 
 function CleaningAssistant({
     onClean,
     loading,
     disabled,
-    result,
     error,
 }) {
     const [instruction, setInstruction] = useState("");
@@ -27,41 +24,59 @@ function CleaningAssistant({
 
 
     return (
-        <section className="cleaning-assistant">
+        <section
+            className="dashboard-card cleaning-assistant"
+            id="cleaner"
+        >
 
-            <div className="cleaning-assistant-header">
+            <div className="section-title">
+
+                <span className="section-icon">
+                    ✦
+                </span>
+
                 <h2>AI Cleaning Assistant</h2>
 
-                <p>
-                    Describe how you want to clean your dataset.
-                </p>
             </div>
+
+
+            <p className="assistant-description">
+                Describe the cleaning task you want the AI
+                to perform.
+            </p>
 
 
             <form
                 className="cleaning-form"
                 onSubmit={handleSubmit}
             >
-                <input
-                    type="text"
+
+                <textarea
                     value={instruction}
                     onChange={(event) =>
                         setInstruction(event.target.value)
                     }
-                    placeholder="e.g. Fill missing salary values with the mean"
+                    placeholder="e.g. Remove duplicate rows"
                     disabled={disabled || loading}
+                    rows="4"
                 />
 
-                <button
-                    type="submit"
-                    disabled={
-                        disabled ||
-                        loading ||
-                        !instruction.trim()
-                    }
-                >
-                    {loading ? "Cleaning..." : "Run"}
-                </button>
+
+                <div className="cleaning-form-actions">
+
+                    <button
+                        type="submit"
+                        disabled={
+                            disabled ||
+                            loading ||
+                            !instruction.trim()
+                        }
+                    >
+                        {loading ? "Cleaning..." : "▷  Run"}
+                    </button>
+
+                </div>
+
             </form>
 
 
@@ -71,32 +86,6 @@ function CleaningAssistant({
                     role="alert"
                 >
                     {error}
-                </div>
-            )}
-
-
-            {result && (
-                <div className="cleaning-result">
-
-                    <h3>Cleaning complete</h3>
-
-                    <ChangeSummary
-                        command={result.command}
-                        summary={result.summary}
-                    />
-
-                    <div className="prediction-details">
-                        <p>
-                            <strong>Action:</strong>{" "}
-                            {result.command.action}
-                        </p>
-
-                        <p>
-                            <strong>Confidence:</strong>{" "}
-                            {(result.confidence * 100).toFixed(1)}%
-                        </p>
-                    </div>
-
                 </div>
             )}
 

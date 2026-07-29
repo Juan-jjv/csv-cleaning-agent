@@ -1,50 +1,75 @@
 function DatasetPreview({
     columns,
     rows,
+    totalRows,
+    onViewAll,
 }) {
-    if (rows.length === 0) {
-        return (
-            <section className="preview-section">
-                <h2>Dataset Preview</h2>
-                <p>No rows to preview.</p>
-            </section>
-        );
-    }
-
     return (
-        <section className="preview-section">
+        <section
+            className="dashboard-card preview-section"
+            id="dataset"
+        >
 
             <h2>Dataset Preview</h2>
 
-            <div className="table-wrapper">
 
-                <table>
-                    <thead>
-                        <tr>
-                            {columns.map((column) => (
-                                <th key={column}>
-                                    {column}
-                                </th>
-                            ))}
-                        </tr>
-                    </thead>
+            {rows.length === 0 ? (
+                <p className="empty-table-message">
+                    No rows to preview.
+                </p>
+            ) : (
+                <>
+                    <div className="table-wrapper">
 
-                    <tbody>
-                        {rows.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    {columns.map((column) => (
+                                        <th key={column}>
+                                            {column}
+                                        </th>
+                                    ))}
+                                </tr>
+                            </thead>
 
-                                {columns.map((column) => (
-                                    <td key={column}>
-                                        {row[column] ?? "—"}
-                                    </td>
+                            <tbody>
+                                {rows.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+
+                                        {columns.map((column) => (
+                                            <td key={column}>
+                                                {row[column] ?? "—"}
+                                            </td>
+                                        ))}
+
+                                    </tr>
                                 ))}
+                            </tbody>
+                        </table>
 
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                    </div>
 
-            </div>
+
+                    <div className="preview-footer">
+
+                        <span>
+                            Showing first {rows.length} of{" "}
+                            {totalRows.toLocaleString()} rows
+                        </span>
+
+
+                        <button
+                            type="button"
+                            className="view-all-button"
+                            onClick={onViewAll}
+                        >
+                            View all data
+                            <span>→</span>
+                        </button>
+
+                    </div>
+                </>
+            )}
 
         </section>
     );

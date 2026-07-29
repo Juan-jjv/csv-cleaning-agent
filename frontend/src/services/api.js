@@ -70,3 +70,23 @@ export async function downloadCsv(sessionId) {
 
     return response.blob();
 }
+
+export async function getDatasetPage(
+    sessionId,
+    page = 1,
+    pageSize = 50,
+) {
+    const response = await fetch(
+        `${API_BASE_URL}/data/${sessionId}?page=${page}&page_size=${pageSize}`
+    );
+
+    if (!response.ok) {
+        const errorData = await response.json();
+
+        throw new Error(
+            errorData.detail || "Failed to load dataset."
+        );
+    }
+
+    return response.json();
+}

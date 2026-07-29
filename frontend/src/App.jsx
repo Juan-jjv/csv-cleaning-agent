@@ -4,14 +4,21 @@ import {
     uploadCsv,
     cleanCsv,
     downloadCsv,
+    getDatasetPage,
 } from "./services/api";
 
+import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import StatsGrid from "./components/StatsGrid";
 import DatasetPreview from "./components/DatasetPreview";
 import CleaningAssistant from "./components/CleaningAssistant";
+import LatestResult from "./components/LatestResult";
+import DataViewer from "./components/DataViewer";
 
 import "./App.css";
+
+
+const DATA_PAGE_SIZE = 50;
 
 
 function App() {
@@ -30,6 +37,15 @@ function App() {
 
     const [downloading, setDownloading] = useState(false);
 
+    const [viewerOpen, setViewerOpen] = useState(false);
+    const [viewerColumns, setViewerColumns] = useState([]);
+    const [viewerRows, setViewerRows] = useState([]);
+    const [viewerPage, setViewerPage] = useState(1);
+    const [viewerTotalPages, setViewerTotalPages] = useState(1);
+    const [viewerTotalRows, setViewerTotalRows] = useState(0);
+    const [viewerLoading, setViewerLoading] = useState(false);
+    const [viewerError, setViewerError] = useState("");
+
 
     async function handleUpload(event) {
         const file = event.target.files[0];
@@ -40,9 +56,9 @@ function App() {
 
         setLoading(true);
         setError("");
-
         setCleaningResult(null);
         setCleaningError("");
+        setViewerOpen(false);
 
         try {
             const data = await uploadCsv(file);
@@ -85,6 +101,8 @@ function App() {
                 confidence: data.confidence,
                 summary: data.summary,
             });
+
+            setViewerOpen(false);
 
         } catch (error) {
             setCleaningResult(null);
@@ -132,80 +150,156 @@ function App() {
     }
 
 
+    async function loadDatasetPage(page) {
+        if (!sessionId) {
+            return;
+        }
+
+        setViewerLoading(true);
+        setViewerError("");
+
+        try {
+            const data = await getDatasetPage(
+                sessionId,
+                page,
+                DATA_PAGE_SIZE,
+            );
+
+            setViewerColumns(data.columns);
+            setViewerRows(data.rows);
+            setViewerPage(data.page);
+            setViewerTotalPages(data.total_pages);
+            setViewerTotalRows(data.total_rows);
+
+        } catch (error) {
+            setViewerError(error.message);
+
+        } finally {
+            setViewerLoading(false);
+        }
+    }
+
+
+    async function handleViewAll() {
+        if (!sessionId) {
+            return;
+        }
+
+        setViewerOpen(true);
+
+        await loadDatasetPage(1);
+    }
+
+
+    async function handleViewerPageChange(page) {
+        await loadDatasetPage(page);
+    }
+
+
+    function handleCloseViewer() {
+        setViewerOpen(false);
+    }
+
+
     return (
-        <div className="app">
+        <div className="app-shell">
 
-            <Header
-                onUpload={handleUpload}
-                uploading={loading}
-                onDownload={handleDownload}
-                downloading={downloading}
-                downloadDisabled={!sessionId}
-            />
+            <Sidebar hasDataset={Boolean(sessionId)} />
 
+            <main
+                className="main-content"
+                id="home"
+            >
 
-            {loading && (
-                <p>Uploading CSV...</p>
-            )}
-
-
-            {error && (
-                <p className="error">
-                    {error}
-                </p>
-            )}
+                <Header
+                    onUpload={handleUpload}
+                    uploading={loading}
+                    onDownload={handleDownload}
+                    downloading={downloading}
+                    downloadDisabled={!sessionId}
+                />
 
 
-            {!stats && !loading && (
-                <div className="empty-state">
-
-                    <h2>
-                        Upload a CSV to get started
-                    </h2>
-
-                    <p>
-                        Your dataset information will appear here.
-                    </p>
-
-                </div>
-            )}
+                {error && (
+                    <div className="error">
+                        {error}
+                    </div>
+                )}
 
 
-            {stats && (
-                <>
+                {!stats && !loading && (
+                    <div className="empty-state">
 
-                    <section className="file-info">
-                        <strong>{filename}</strong>
-                    </section>
+                        <h2>
+                            Upload a CSV to get started
+                        </h2>
 
+                        <p>
+                            Your dataset dashboard will
+                            appear here.
+                        </p>
 
-                    <StatsGrid
-                        stats={stats}
-                    />
-
-
-                    <DatasetPreview
-                        columns={columnNames}
-                        rows={preview}
-                    />
+                    </div>
+                )}
 
 
-                    <CleaningAssistant
-                        onClean={handleClean}
-                        loading={cleaning}
-                        disabled={!sessionId}
-                        result={cleaningResult}
-                        error={cleaningError}
-                    />
-
-                </>
-            )}
+                {loading && (
+                    <div className="loading-message">
+                        Uploading CSV...
+                    </div>
+                )}
 
 
-            {sessionId && (
-                <p className="session-debug">
-                    Session: {sessionId}
-                </p>
+                {stats && (
+                    <>
+
+                        <StatsGrid
+                            stats={stats}
+                        />
+
+
+                        <DatasetPreview
+                            columns={columnNames}
+                            rows={preview}
+                            totalRows={stats.rows}
+                            onViewAll={handleViewAll}
+                        />
+
+
+                        <div className="bottom-dashboard-grid">
+
+                            <CleaningAssistant
+                                onClean={handleClean}
+                                loading={cleaning}
+                                disabled={!sessionId}
+                                error={cleaningError}
+                            />
+
+
+                            <LatestResult
+                                result={cleaningResult}
+                            />
+
+                        </div>
+
+                    </>
+                )}
+
+            </main>
+
+
+            {viewerOpen && (
+                <DataViewer
+                    columns={viewerColumns}
+                    rows={viewerRows}
+                    page={viewerPage}
+                    totalPages={viewerTotalPages}
+                    totalRows={viewerTotalRows}
+                    loading={viewerLoading}
+                    error={viewerError}
+                    onPageChange={handleViewerPageChange}
+                    onClose={handleCloseViewer}
+                />
             )}
 
         </div>
