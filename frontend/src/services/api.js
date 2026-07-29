@@ -54,3 +54,19 @@ export async function cleanCsv(
 
     return response.json();
 }
+
+export async function downloadCsv(sessionId) {
+    const response = await fetch(
+        `${API_BASE_URL}/download/${sessionId}`
+    );
+
+    if (!response.ok) {
+        const errorData = await response.json();
+
+        throw new Error(
+            errorData.detail || "Failed to download CSV."
+        );
+    }
+
+    return response.blob();
+}

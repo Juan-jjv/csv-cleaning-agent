@@ -181,3 +181,31 @@ th {
 .cleaning-result p {
     margin: 4px 0;
 }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.download-button {
+    padding: 10px 18px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: white;
+    color: #374151;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.download-button:hover:not(:disabled) {
+    background: #f9fafb;
+}
+
+.download-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
