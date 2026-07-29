@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import ChangeSummary from "./ChangeSummary";
+
 
 function CleaningAssistant({
     onClean,
@@ -25,14 +27,17 @@ function CleaningAssistant({
 
     return (
         <section className="cleaning-assistant">
+
             <div className="cleaning-assistant-header">
                 <div>
                     <h2>AI Cleaning Assistant</h2>
+
                     <p>
                         Describe how you want to clean your dataset.
                     </p>
                 </div>
             </div>
+
 
             <form
                 className="cleaning-form"
@@ -60,19 +65,32 @@ function CleaningAssistant({
                 </button>
             </form>
 
+
             {result && (
                 <div className="cleaning-result">
-                    <p>
-                        <strong>Action:</strong>{" "}
-                        {result.command.action}
-                    </p>
 
-                    <p>
-                        <strong>Confidence:</strong>{" "}
-                        {(result.confidence * 100).toFixed(1)}%
-                    </p>
+                    <h3>Cleaning complete</h3>
+
+                    <ChangeSummary
+                        command={result.command}
+                        summary={result.summary}
+                    />
+
+                    <div className="prediction-details">
+                        <p>
+                            <strong>Action:</strong>{" "}
+                            {result.command.action}
+                        </p>
+
+                        <p>
+                            <strong>Confidence:</strong>{" "}
+                            {(result.confidence * 100).toFixed(1)}%
+                        </p>
+                    </div>
+
                 </div>
             )}
+
         </section>
     );
 }

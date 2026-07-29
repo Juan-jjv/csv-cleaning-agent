@@ -209,3 +209,39 @@ th {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.cleaning-result h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.change-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 14px;
+    margin-bottom: 14px;
+
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.change-summary strong {
+    font-size: 15px;
+}
+
+.change-summary span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.prediction-details {
+    display: flex;
+    gap: 24px;
+}
+
+.prediction-details p {
+    margin: 0;
+}
