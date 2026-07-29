@@ -245,3 +245,15 @@ th {
 .prediction-details p {
     margin: 0;
 }
+
+.cleaning-error {
+    margin-top: 16px;
+    padding: 12px 14px;
+
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    color: #991b1b;
+    font-size: 14px;
+}

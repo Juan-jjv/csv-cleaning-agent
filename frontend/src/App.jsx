@@ -24,6 +24,7 @@ function App() {
 
     const [cleaning, setCleaning] = useState(false);
     const [cleaningResult, setCleaningResult] = useState(null);
+    const [cleaningError, setCleaningError] = useState("");
 
     const [downloading, setDownloading] = useState(false);
 
@@ -37,7 +38,9 @@ function App() {
 
         setLoading(true);
         setError("");
+
         setCleaningResult(null);
+        setCleaningError("");
 
         try {
             const data = await uploadCsv(file);
@@ -63,7 +66,8 @@ function App() {
         }
 
         setCleaning(true);
-        setError("");
+
+        setCleaningError("");
 
         try {
             const data = await cleanCsv(
@@ -82,7 +86,8 @@ function App() {
             });
 
         } catch (error) {
-            setError(error.message);
+            setCleaningResult(null);
+            setCleaningError(error.message);
 
         } finally {
             setCleaning(false);
@@ -231,6 +236,7 @@ function App() {
                             loading={cleaning}
                             disabled={!sessionId}
                             result={cleaningResult}
+                            error={cleaningError}
                         />
 
                     </section>

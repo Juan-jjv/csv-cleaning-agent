@@ -8,6 +8,7 @@ function CleaningAssistant({
     loading,
     disabled,
     result,
+    error,
 }) {
     const [instruction, setInstruction] = useState("");
 
@@ -29,13 +30,11 @@ function CleaningAssistant({
         <section className="cleaning-assistant">
 
             <div className="cleaning-assistant-header">
-                <div>
-                    <h2>AI Cleaning Assistant</h2>
+                <h2>AI Cleaning Assistant</h2>
 
-                    <p>
-                        Describe how you want to clean your dataset.
-                    </p>
-                </div>
+                <p>
+                    Describe how you want to clean your dataset.
+                </p>
             </div>
 
 
@@ -64,6 +63,16 @@ function CleaningAssistant({
                     {loading ? "Cleaning..." : "Run"}
                 </button>
             </form>
+
+
+            {error && (
+                <div
+                    className="cleaning-error"
+                    role="alert"
+                >
+                    {error}
+                </div>
+            )}
 
 
             {result && (
