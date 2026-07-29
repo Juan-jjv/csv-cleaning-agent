@@ -6,8 +6,10 @@ import {
     downloadCsv,
 } from "./services/api";
 
+import Header from "./components/Header";
+import StatsGrid from "./components/StatsGrid";
+import DatasetPreview from "./components/DatasetPreview";
 import CleaningAssistant from "./components/CleaningAssistant";
-import DownloadButton from "./components/DownloadButton";
 
 import "./App.css";
 
@@ -66,7 +68,6 @@ function App() {
         }
 
         setCleaning(true);
-
         setCleaningError("");
 
         try {
@@ -107,7 +108,6 @@ function App() {
             const blob = await downloadCsv(sessionId);
 
             const url = window.URL.createObjectURL(blob);
-
             const link = document.createElement("a");
 
             link.href = url;
@@ -119,7 +119,6 @@ function App() {
             document.body.appendChild(link);
 
             link.click();
-
             link.remove();
 
             window.URL.revokeObjectURL(url);
@@ -136,34 +135,13 @@ function App() {
     return (
         <div className="app">
 
-            <header className="header">
-                <div>
-                    <h1>CSV Cleaning Agent</h1>
-                    <p>Clean and transform your data with AI</p>
-                </div>
-
-                <div className="header-actions">
-
-                    <label className="upload-button">
-                        {loading ? "Uploading..." : "Upload CSV"}
-
-                        <input
-                            type="file"
-                            accept=".csv"
-                            onChange={handleUpload}
-                            disabled={loading}
-                            hidden
-                        />
-                    </label>
-
-                    <DownloadButton
-                        onDownload={handleDownload}
-                        disabled={!sessionId}
-                        loading={downloading}
-                    />
-
-                </div>
-            </header>
+            <Header
+                onUpload={handleUpload}
+                uploading={loading}
+                onDownload={handleDownload}
+                downloading={downloading}
+                downloadDisabled={!sessionId}
+            />
 
 
             {loading && (
@@ -180,66 +158,46 @@ function App() {
 
             {!stats && !loading && (
                 <div className="empty-state">
-                    <h2>Upload a CSV to get started</h2>
+
+                    <h2>
+                        Upload a CSV to get started
+                    </h2>
 
                     <p>
                         Your dataset information will appear here.
                     </p>
+
                 </div>
             )}
 
 
             {stats && (
                 <>
+
                     <section className="file-info">
                         <strong>{filename}</strong>
                     </section>
 
 
-                    <section className="stats-grid">
-
-                        <StatCard
-                            label="Rows"
-                            value={stats.rows}
-                        />
-
-                        <StatCard
-                            label="Columns"
-                            value={stats.columns}
-                        />
-
-                        <StatCard
-                            label="Missing Values"
-                            value={stats.missing_values}
-                        />
-
-                        <StatCard
-                            label="Duplicate Rows"
-                            value={stats.duplicate_rows}
-                        />
-
-                    </section>
+                    <StatsGrid
+                        stats={stats}
+                    />
 
 
-                    <section className="preview-section">
-
-                        <h2>Dataset Preview</h2>
-
-                        <DatasetTable
-                            columns={columnNames}
-                            rows={preview}
-                        />
+                    <DatasetPreview
+                        columns={columnNames}
+                        rows={preview}
+                    />
 
 
-                        <CleaningAssistant
-                            onClean={handleClean}
-                            loading={cleaning}
-                            disabled={!sessionId}
-                            result={cleaningResult}
-                            error={cleaningError}
-                        />
+                    <CleaningAssistant
+                        onClean={handleClean}
+                        loading={cleaning}
+                        disabled={!sessionId}
+                        result={cleaningResult}
+                        error={cleaningError}
+                    />
 
-                    </section>
                 </>
             )}
 
@@ -249,55 +207,6 @@ function App() {
                     Session: {sessionId}
                 </p>
             )}
-
-        </div>
-    );
-}
-
-
-function StatCard({ label, value }) {
-    return (
-        <div className="stat-card">
-            <span>{label}</span>
-            <strong>{value}</strong>
-        </div>
-    );
-}
-
-
-function DatasetTable({ columns, rows }) {
-    if (rows.length === 0) {
-        return <p>No rows to preview.</p>;
-    }
-
-    return (
-        <div className="table-wrapper">
-
-            <table>
-                <thead>
-                    <tr>
-                        {columns.map((column) => (
-                            <th key={column}>
-                                {column}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {rows.map((row, rowIndex) => (
-                        <tr key={rowIndex}>
-
-                            {columns.map((column) => (
-                                <td key={column}>
-                                    {row[column] ?? "—"}
-                                </td>
-                            ))}
-
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
 
         </div>
     );
