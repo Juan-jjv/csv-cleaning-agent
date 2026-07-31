@@ -5,11 +5,6 @@ set -e
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$PROJECT_ROOT"
 
-
-# -----------------------------
-# Check Python environment
-# -----------------------------
-
 if [ ! -x ".venv/bin/python" ]; then
     echo "Error: Python virtual environment was not found."
     echo ""
@@ -20,20 +15,10 @@ if [ ! -x ".venv/bin/python" ]; then
     exit 1
 fi
 
-
-# -----------------------------
-# Check npm
-# -----------------------------
-
 if ! command -v npm > /dev/null 2>&1; then
     echo "Error: npm was not found."
     exit 1
 fi
-
-
-# -----------------------------
-# Check frontend dependencies
-# -----------------------------
 
 if [ ! -d "frontend/node_modules" ]; then
     echo "Error: Frontend dependencies are not installed."
@@ -43,11 +28,6 @@ if [ ! -d "frontend/node_modules" ]; then
     echo "  npm install"
     exit 1
 fi
-
-
-# -----------------------------
-# Cleanup
-# -----------------------------
 
 cleanup() {
     echo ""
@@ -60,11 +40,6 @@ cleanup() {
 }
 
 trap cleanup EXIT INT TERM
-
-
-# -----------------------------
-# Start backend
-# -----------------------------
 
 echo "Starting CSV Cleaning Agent..."
 echo ""
@@ -81,11 +56,6 @@ echo "Starting backend..."
 
 BACKEND_PID=$!
 
-
-# -----------------------------
-# Wait for backend port
-# -----------------------------
-
 echo "Waiting for backend..."
 
 BACKEND_READY=false
@@ -98,7 +68,6 @@ for i in {1..30}; do
         exit 1
     fi
 
-    # Check whether port 8000 is accepting connections
     if .venv/bin/python - <<'PY'
 import socket
 import sys
@@ -127,10 +96,5 @@ fi
 echo "Backend is ready."
 echo ""
 echo "Starting frontend..."
-
-
-# -----------------------------
-# Start frontend
-# -----------------------------
 
 npm --prefix frontend run dev
